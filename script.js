@@ -1,25 +1,41 @@
-function checkName() {
-  let name = document.getElementById("nameInput").value.toLowerCase();
-  let msg = "";
+function playVoice() {
+  const name = document.getElementById("nameInput").value.trim();
+  const message = document.getElementById("message");
+  const countdown = document.getElementById("countdown");
 
-  if (name === "swathi") {
-    msg = "oye best one inka time undhi wait cheyu";
-  } 
-  else if (name === "meghana") {
-    msg = "suger agadhu kadha neeku chudu inka time undhi";
-  } 
-  else if (name === "janu") {
-    msg = "madam inka time undhi 12 avvaledhu";
-  } 
-  else if (name === "bhavya") {
-    msg = "bokka garu wait cheyandi India lo inka time avvaledhu";
-  } 
-  else if (name === "manasa") {
-    msg = "rabbit time inka avvaledhu ga aggu";
-  } 
+  let text = "";
+
+  if (name === "Swathi") text = "oye best one inka time undhi wait cheyu";
+  else if (name === "Meghana") text = "suger agadhu kadha neeku";
+  else if (name === "Janu") text = "madam inka time undhi";
+  else if (name === "Bhavya") text = "bokka garu wait for few minutes India lo Inka time avvaledhu";
+  else if (name === "Manasa") text = "rabbit time inka avvaledhu ga aggu";
   else {
-    msg = "❌ Neeku em pani ra ikkada nuvvu okka panicheyu nuvvu ....";
+    message.innerText = "This surprise is not for you 😜";
+    return;
   }
 
-  document.getElementById("message").innerText = msg;
+  message.innerText = text;
+  countdown.style.display = "block";
 }
+
+// COUNTDOWN
+const targetDate = new Date("January 1, 2026 00:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+
+  if (diff <= 0) {
+    document.body.innerHTML = "<h1 style='color:white'>🎉 Surprise Time 🎉</h1>";
+    return;
+  }
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("countdown").innerText =
+    `${d}d ${h}h ${m}m ${s}s left`;
+}, 1000);

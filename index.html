@@ -1,20 +1,28 @@
-<body>
-  <h1>🎉 New Year Surprise 🎉</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Year Surprise</title>
+  <script src="script.js" defer></script>
+</head>
+<body style="text-align:center; padding-top:100px; font-family:Arial">
+
+  <h2>🎉 New Year Surprise 🎉</h2>
 
   <input 
     type="text" 
     id="nameInput" 
-    placeholder=" peru cheppu bah "
-  />
+    placeholder="peru cheppu bah"
+    style="padding:10px; width:250px;"
+  >
 
   <br><br>
 
-  <button onclick="playVoice()">🎙 Manu </button>
+  <button onclick="playVoice()" style="padding:10px 20px;">
+    🎤 Manu
+  </button>
 
-  <p id="reply"></p>
+  <h3 id="reply"></h3>
+  <h3 id="countdown"></h3>
 
-  <div id="countdown"></div>
-
-  <script src="script.js"></script>
 </body>
-
+</html>

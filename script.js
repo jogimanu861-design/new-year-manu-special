@@ -26,10 +26,9 @@ setInterval(() => {
   const now = new Date().getTime();
   const diff = targetDate - now;
 
-  if (diff <= 0) {
-    document.body.innerHTML = "<h1 style='color:white'>🎉 Surprise Time 🎉</h1>";
-    return;
-  }
+ if (diff <= 0) {
+  window.location.href = "surprise.html";
+}
 
   const d = Math.floor(diff / (1000 * 60 * 60 * 24));
   const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -39,3 +38,4 @@ setInterval(() => {
   document.getElementById("countdown").innerText =
     `${d}d ${h}h ${m}m ${s}s left`;
 }, 1000);
+

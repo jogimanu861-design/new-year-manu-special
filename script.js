@@ -11,6 +11,9 @@ function playVoice() {
   };
 
   if (messages[name]) {
+
+    localStorage.setItem("visitorName", name);
+    
     reply.innerText = messages[name];
     startCountdown();
   } else {

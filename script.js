@@ -1,23 +1,23 @@
 function playVoice() {
-  const name = document.getElementById("nameInput").value.toLowerCase();
+  const name = document.getElementById("nameInput").value.toLowerCase().trim();
   const reply = document.getElementById("reply");
 
+  // SAVE NAME FOR NEXT PAGE (IMPORTANT)
+  localStorage.setItem("visitorName", name);
+
   const messages = {
-    swathi: "oye best one inka time undhi wait cheyu",
-    meghana: "sugar agadhu kadha ra neeku wait cheyu 12 avvaledhu",
-    janu: "madam inka time undhi koncham sepu",
-    bunnu: "bokka garu wait for few minutes India lo inka time avvaledhu andi",
-    rabbit: "rabbit time inka avvaledhu ga aggu"
+    swathi: "oye best one inka time undhi wait cheyu 😌",
+    meghana: "sugar agadhu kadha ra neeku 😄 12 avvaledhu inka",
+    janu: "Janu Ji inka time undhi koncham sepu 🕰️",
+    bhavya: "bokka garu wait cheyandi 😜 India lo inka time avvaledhu",
+    manasa: "rabbit 🐰 time inka avvaledhu ga aggu"
   };
 
   if (messages[name]) {
-
-    localStorage.setItem("visitorName", name);
-    
     reply.innerText = messages[name];
     startCountdown();
   } else {
-    reply.innerText = " Bhaya nuvvu avvaro telidhu kani iddi neeku kadhu mingai ";
+    reply.innerText = "Ee page neeku kadhu bhaya 😅";
   }
 }
 
@@ -43,4 +43,3 @@ function startCountdown() {
       `⏳ ${hrs}h ${mins}m ${secs}s left`;
   }, 1000);
 }
-

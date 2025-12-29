@@ -1,41 +1,42 @@
 function playVoice() {
-  const name = document.getElementById("nameInput").value.trim();
-  const message = document.getElementById("message");
+  const name = document.getElementById("nameInput").value.toLowerCase();
+  const reply = document.getElementById("reply");
+
+  const messages = {
+    swathi: "oye best one inka time undhi wait cheyu",
+    meghana: "sugar agadhu kadha neeku",
+    janu: "madam inka time undhi",
+    bhavya: "bokka garu wait for few minutes India lo inka time avvaledhu",
+    manasa: "rabbit time inka avvaledhu ga aggu"
+  };
+
+  if (messages[name]) {
+    reply.innerText = messages[name];
+    startCountdown();
+  } else {
+    reply.innerText = "This surprise is only for special people 😌";
+  }
+}
+
+function startCountdown() {
   const countdown = document.getElementById("countdown");
 
-  let text = "";
+  const target = new Date("Jan 1, 2026 00:00:00").getTime();
 
-  if (name === "Swathi") text = "oye best one inka time undhi wait cheyu";
-  else if (name === "Meghana") text = "suger agadhu kadha neeku";
-  else if (name === "Janu") text = "madam inka time undhi";
-  else if (name === "Bhavya") text = "bokka garu wait for few minutes India lo Inka time avvaledhu";
-  else if (name === "Manasa") text = "rabbit time inka avvaledhu ga aggu";
-  else {
-    message.innerText = "This surprise is not for you 😜";
-    return;
-  }
+  setInterval(() => {
+    const now = new Date().getTime();
+    const diff = target - now;
 
-  message.innerText = text;
-  countdown.style.display = "block";
+    if (diff <= 0) {
+      window.location.href = "surprise.html";
+      return;
+    }
+
+    const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    countdown.innerText =
+      `⏳ ${hrs}h ${mins}m ${secs}s left`;
+  }, 1000);
 }
-
-// COUNTDOWN
-const targetDate = new Date("January 1, 2026 00:00:00").getTime();
-
-setInterval(() => {
-  const now = new Date().getTime();
-  const diff = targetDate - now;
-
- if (diff <= 0) {
-  window.location.href = "surprise.html";
-}
-
-  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const m = Math.floor((diff / (1000 * 60)) % 60);
-  const s = Math.floor((diff / 1000) % 60);
-
-  document.getElementById("countdown").innerText =
-    `${d}d ${h}h ${m}m ${s}s left`;
-}, 1000);
-

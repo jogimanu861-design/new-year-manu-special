@@ -4,17 +4,17 @@ function playVoice() {
 
   const messages = {
     swathi: "oye best one inka time undhi wait cheyu",
-    meghana: "sugar agadhu kadha neeku",
-    janu: "madam inka time undhi",
-    bhavya: "bokka garu wait for few minutes India lo inka time avvaledhu",
-    manasa: "rabbit time inka avvaledhu ga aggu"
+    meghana: "sugar agadhu kadha ra neeku wait cheyu 12 avvaledhu",
+    janu: "madam inka time undhi koncham sepu",
+    bunnu: "bokka garu wait for few minutes India lo inka time avvaledhu andi",
+    rabbit: "rabbit time inka avvaledhu ga aggu"
   };
 
   if (messages[name]) {
     reply.innerText = messages[name];
     startCountdown();
   } else {
-    reply.innerText = "This surprise is only for special people 😌";
+    reply.innerText = " Bhaya nuvvu avvaro telidhu kani iddi neeku kadhu mingai ";
   }
 }
 
@@ -40,3 +40,4 @@ function startCountdown() {
       `⏳ ${hrs}h ${mins}m ${secs}s left`;
   }, 1000);
 }
+

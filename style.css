@@ -15,7 +15,7 @@ input {
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background: #ff4d6d;
+  background: #705080;
   color: white;
   border: none;
   border-radius: 8px;
@@ -25,7 +25,7 @@ button {
 #reply {
   margin-top: 20px;
   font-size: 18px;
-  color: #333;
+  color: #b54141;
 }
 
 #countdown {
@@ -33,3 +33,4 @@ button {
   font-size: 20px;
   font-weight: bold;
 }
+

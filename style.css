@@ -1,64 +1,35 @@
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  height: 100vh;
-  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.container {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
+  background: linear-gradient(#ffd6e8, #ffeef5);
+  font-family: Arial, sans-serif;
   text-align: center;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  animation: fadeIn 1.2s ease;
-}
-
-h1 {
-  color: #ff4b6e;
+  padding-top: 100px;
 }
 
 input {
-  width: 80%;
   padding: 10px;
   font-size: 16px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  width: 220px;
+  border-radius: 6px;
 }
 
 button {
-  background: #ff4b6e;
-  color: white;
-  border: none;
   padding: 10px 20px;
   font-size: 16px;
-  border-radius: 25px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-button:hover {
-  background: #e63b5d;
-}
-
-#message {
-  margin-top: 15px;
-  font-weight: bold;
+#reply {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
 }
 
 #countdown {
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 20px;
-  color: #333;
-  display: none;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  font-weight: bold;
 }

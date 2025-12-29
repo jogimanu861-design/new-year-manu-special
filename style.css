@@ -1,0 +1,18 @@
+body {
+  text-align: center;
+  font-family: Arial;
+  background: linear-gradient(to right, pink, lightyellow);
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  background: hotpink;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}

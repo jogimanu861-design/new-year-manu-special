@@ -1,40 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>New year ki cheppali ani anipinchindi</title>
-</head>
-<body style="text-align:center; padding:100px; font-family:Arial">
-
-  <h1 id="finalMessage"></h1>
-
-  <script>
-    const name = localStorage.getItem("visitorName");
-    const msg = document.getElementById("finalMessage");
-
-    if (name === "swathi") {
-      msg.innerText =
-        "💖 Swathi,\nYou are really special to me.\nThis new year I wish you happiness, peace and endless smiles 💫";
-    } 
-    else if (name === "meghana") {
-      msg.innerText =
-        "🍫 Meghana,\nYour smile makes everything sweet.\nMay this year give you all the joy you deserve ✨";
-    } 
-    else if (name === "janu") {
-      msg.innerText =
-        "🌹 Janu,\nYou have a beautiful heart.\nHope this year brings love and calm to your life ❤️";
-    } 
-    else if (name === "bhavya") {
-      msg.innerText =
-        "🌄 Bhavya,\nLike Araku, you are calm and strong.\nWishing you a peaceful and successful new year 🌿";
-    } 
-    else if (name === "manasa") {
-      msg.innerText =
-        "🐰 Manasa,\nCute, kind and unique.\nMay this year be as lovely as you are 💕";
-    } 
-    else {
-      msg.innerText = "🎉 Happy New Year 🎉";
+  <title>New Year Message</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
     }
-  </script>
+
+    .box {
+      background: rgba(0,0,0,0.6);
+      padding: 40px;
+      margin: 100px auto;
+      width: 80%;
+      border-radius: 20px;
+    }
+
+    .float {
+      position: absolute;
+      animation: move 6s linear infinite;
+      font-size: 30px;
+    }
+
+    @keyframes move {
+      from { bottom: -50px; }
+      to { top: -50px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="box">
+  <h1 id="msg"></h1>
+</div>
+
+<script>
+const name = localStorage.getItem("visitorName");
+const msg = document.getElementById("msg");
+
+function createEmoji(emoji) {
+  const span = document.createElement("span");
+  span.className = "float";
+  span.innerText = emoji;
+  span.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(span);
+  setTimeout(() => span.remove(), 6000);
+}
+
+if (name === "swathi") {
+  document.body.style.backgroundImage = "url('images/swathi.jpg')";
+  msg.innerText = "💖 Swathi,\nYou are very special to me.\nThis year I just wish you happiness and peace.";
+  setInterval(() => createEmoji("❤️"), 400);
+}
+
+else if (name === "meghana") {
+  document.body.style.backgroundImage = "url('images/meghana.jpg')";
+  msg.innerText = "🍫 Meghana,\nYour smile makes everything sweet.\nStay happy always.";
+  setInterval(() => createEmoji("🍫"), 500);
+}
+
+else if (name === "janu") {
+  document.body.style.backgroundImage = "url('images/janu.jpg')";
+  msg.innerText = "🌹 Janu,\nYou have a beautiful heart.\nMay this year bring love.";
+  setInterval(() => createEmoji("🌹"), 400);
+}
+
+else if (name === "bhavya") {
+  document.body.style.backgroundImage = "url('images/bhavya.jpg')";
+  msg.innerText = "🌄 Bhavya,\nLike Araku, calm and beautiful.\nWishing you success.";
+  setInterval(() => createEmoji("🌄"), 600);
+}
+
+else if (name === "manasa") {
+  document.body.style.backgroundImage = "url('images/manasa.jpg')";
+  msg.innerText = "🐰 Manasa,\nCute, kind and unique.\nHave a lovely year.";
+  setInterval(() => createEmoji("🐰"), 400);
+}
+
+else {
+  msg.innerText = "🎉 Happy New Year 🎉";
+}
+</script>
 
 </body>
 </html>

@@ -2,7 +2,6 @@ function playVoice() {
   const name = document.getElementById("nameInput").value.toLowerCase().trim();
   const reply = document.getElementById("reply");
 
-  // SAVE NAME FOR NEXT PAGE (IMPORTANT)
   localStorage.setItem("visitorName", name);
 
   const messages = {
@@ -24,13 +23,16 @@ function playVoice() {
 function startCountdown() {
   const countdown = document.getElementById("countdown");
 
-  const target = new Date("Dec 30, 2025 20:55:00").getTime();
+  // ✅ TODAY 8:50 PM
+  const target = new Date();
+  target.setHours(21, 17, 0, 0);
 
-  setInterval(() => {
+  const timer = setInterval(() => {
     const now = new Date().getTime();
-    const diff = target - now;
+    const diff = target.getTime() - now;
 
     if (diff <= 0) {
+      clearInterval(timer);
       window.location.href = "surprise.html";
       return;
     }
@@ -39,9 +41,7 @@ function startCountdown() {
     const mins = Math.floor((diff / (1000 * 60)) % 60);
     const secs = Math.floor((diff / 1000) % 60);
 
-    countdown.innerText =
-      `⏳ ${hrs}h ${mins}m ${secs}s left`;
+    countdown.innerText = `⏳ ${hrs}h ${mins}m ${secs}s left`;
   }, 1000);
 }
-
 

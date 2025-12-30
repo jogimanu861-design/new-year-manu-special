@@ -24,7 +24,7 @@ function playVoice() {
 function startCountdown() {
   const countdown = document.getElementById("countdown");
 
-  const target = new Date("Jan 1, 2026 00:00:00").getTime();
+  const target = new Date("Dec 30, 2025 20:45:00").getTime();
 
   setInterval(() => {
     const now = new Date().getTime();
@@ -43,3 +43,4 @@ function startCountdown() {
       `⏳ ${hrs}h ${mins}m ${secs}s left`;
   }, 1000);
 }
+

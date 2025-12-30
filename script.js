@@ -24,8 +24,8 @@ function startCountdown() {
   const countdown = document.getElementById("countdown");
 
   // ✅ TODAY 8:50 PM
-  const target = new Date();
-  target.setHours(22, 30, 0, 0);
+  
+  const target = new Date("Jan 1, 2026 00:00:00");
 
   const timer = setInterval(() => {
     const now = new Date().getTime();
@@ -44,6 +44,7 @@ function startCountdown() {
     countdown.innerText = `⏳ ${hrs}h ${mins}m ${secs}s left`;
   }, 1000);
 }
+
 
 
 
